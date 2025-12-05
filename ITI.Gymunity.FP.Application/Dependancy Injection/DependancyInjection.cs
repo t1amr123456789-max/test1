@@ -17,7 +17,21 @@ namespace ITI.Gymunity.FP.Application.Dependancy_Injection
 
             // Auto Mapper Configurations
             services.AddAutoMapper((opt) => { }, typeof(MappingProfile).Assembly);
+
+            // Application Services
             services.AddScoped<TrainerProfileService>();
+            services.AddScoped<IProgramService, ProgramService>();
+            services.AddScoped<IExerciseLibraryService, ExerciseLibraryService>();
+            services.AddScoped<IProgramManagerService, ProgramManagerService>();
+            services.AddScoped<IWeekService, WeekService>();
+            services.AddScoped<IDayService, DayService>();
+            services.AddScoped<IDayExerciseService, DayExerciseService>();
+            services.AddScoped<ITrainerProfileManagerService, TrainerProfileManagerService>();
+            services.AddScoped<IClientService, ClientService>();
+            services.AddScoped<IChatService, ChatService>();
+            services.AddScoped<IAdminService, AdminService>();
+            services.AddScoped<IUserAdminService, UserAdminService>();
+            services.AddScoped<ISubscriptionAdminService, SubscriptionAdminService>();
 
             return services;
         }

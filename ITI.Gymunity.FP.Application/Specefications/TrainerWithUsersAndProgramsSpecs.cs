@@ -10,18 +10,16 @@ using System.Threading.Tasks;
 
 namespace ITI.Gymunity.FP.Application.Specefications
 {
-    internal class TrainerWithUsersAndProgramsSpecs : BaseSpecification<TrainerProfile>
+    public class TrainerWithUsersAndProgramsSpecs : BaseSpecification<TrainerProfile>
     {
         public TrainerWithUsersAndProgramsSpecs()
         {
             AddInclude(t => t.User);
-            //AddInclude(tp => tp.Programs);
             AddInclude(q => q.Include(tp => tp.Programs).ThenInclude(p => p.Weeks));
         }
         public TrainerWithUsersAndProgramsSpecs(Expression<Func<TrainerProfile , bool>>? criteria) :base(criteria)
         {
             AddInclude(t => t.User);
-            //AddInclude(tp => tp.Programs);
             AddInclude(q => q.Include(tp => tp.Programs).ThenInclude(p => p.Weeks));
         }
     }

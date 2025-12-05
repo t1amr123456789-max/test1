@@ -63,8 +63,6 @@ namespace ITI.Gymunity.FP.Infrastructure.Dependancy_Injection
                 options.User.RequireUniqueEmail = true;
             }).AddEntityFrameworkStores<AppDbContext>();
 
-
-
             return services;
         }
         public static IServiceCollection AddInfrastructureServices(this IServiceCollection services)
@@ -72,12 +70,19 @@ namespace ITI.Gymunity.FP.Infrastructure.Dependancy_Injection
             // Register Repositories 
             services.AddScoped<IUnitOfWork, UnitOfWork>();
             services.AddScoped<ITrainerProfileRepository, TrainerProfileRepository>();
-
+            services.AddScoped<IExerciseLibraryRepository, ExerciseLibraryRepository>();
+            services.AddScoped<IProgramRepository, ProgramRepository>();
+            services.AddScoped<IWeekRepository, WeekRepository>();
+            services.AddScoped<IDayRepository, DayRepository>();
+            services.AddScoped<IDayExerciseRepository, DayExerciseRepository>();
+            services.AddScoped<IChatRepository, ChatRepository>();
 
             // Register External Services
             services.AddScoped<IEmailService, EmailService>();
             services.AddScoped<IFileUploadService, FileUploadService>();
             services.AddScoped<IAuthService, AuthService>();
+
+            
 
 
             return services;

@@ -18,5 +18,6 @@ namespace ITI.Gymunity.FP.Domain.RepositoiesContracts
         void Add(TEntity entity);
         void Update(TEntity entity);
         void Delete(TEntity entity);
+        Task<IReadOnlyList<TEntity>> ListAsync(ISpecification<TEntity> specs);
     }
 }

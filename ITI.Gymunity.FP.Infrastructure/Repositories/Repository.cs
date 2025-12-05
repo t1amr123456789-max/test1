@@ -12,9 +12,14 @@ using System.Threading.Tasks;
 
 namespace ITI.Gymunity.FP.Infrastructure.Repositories
 {
-    public class Repository<T>(AppDbContext context) : IRepository<T> where T : BaseEntity
+    public class Repository<T> : IRepository<T> where T : BaseEntity
     {
-        private protected readonly AppDbContext _Context = context;
+        private protected readonly AppDbContext _Context;
+
+        public Repository(AppDbContext context)
+        {
+            _Context = context;
+        }
 
         public void Add(T entity) => _Context.Add(entity);
 
@@ -39,6 +44,9 @@ namespace ITI.Gymunity.FP.Infrastructure.Repositories
 
         public async Task<IEnumerable<T>> GetAllAsync()
             => await _Context.Set<T>().ToListAsync();
+
+        public async Task<IReadOnlyList<T>> ListAsync(ISpecification<T> specs)
+            => await ApplySpecifications(specs).ToListAsync();
 
         protected IQueryable<T> ApplySpecifications(ISpecification<T> specs)
             => SpecificationEvaluator<T>.BuildQuery(_Context.Set<T>(), specs);

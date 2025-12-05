@@ -24,7 +24,12 @@ namespace ITI.Gymunity.FP.Domain.Models.ProgramAggregate
         public DateTime UpdatedAt { get; set; } = DateTime.UtcNow;
 
         public AppUser Trainer { get; set; } = null!;
-        public ICollection<ProgramWeek> Weeks { get; set; } = [];
-        public ICollection<PackageProgram> PackagePrograms { get; set; } = [];
+
+        // Optional link to TrainerProfile
+        public int? TrainerProfileId { get; set; }
+        public TrainerProfile? TrainerProfile { get; set; }
+
+        public ICollection<ProgramWeek> Weeks { get; set; } = new List<ProgramWeek>();
+        public ICollection<PackageProgram> PackagePrograms { get; set; } = new List<PackageProgram>();
     }
 }

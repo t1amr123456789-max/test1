@@ -1,0 +1,172 @@
+{
+ "info": {
+ "name": "Gymunity Trainer Dashboard API",
+ "_postman_id": "b6d9f9a0-0000-4000-8000-000000000000",
+ "description": "Postman collection for all API endpoints (use {{baseUrl}} variable)",
+ "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+ },
+ "variable": [
+  {
+    "key": "baseUrl",
+    "value": "https://localhost:5131"
+  },
+ { "key": "authToken", "value": "" }
+ ],
+ "item": [
+ {
+ "name": "Admin",
+ "item": [
+ {
+ "name": "AdminController",
+ "item": [
+ { "name": "GET /api/admin/programs/pending", "request": { "method": "GET", "header": [{"key":"Authorization","value":"Bearer {{authToken}}"}], "url": { "raw": "{{baseUrl}}/api/admin/programs/pending", "host": ["{{baseUrl}}"], "path": ["api","admin","programs","pending"] } } },
+ { "name": "PUT /api/admin/programs/{programId}/approve", "request": { "method": "PUT", "header": [{"key":"Authorization","value":"Bearer {{authToken}}"},{"key":"Content-Type","value":"application/json"}], "body": { "mode":"raw","raw":"{ \"adminUserId\": \"admin-id\" }" }, "url": { "raw": "{{baseUrl}}/api/admin/programs/:programId/approve", "host": ["{{baseUrl}}"], "path": ["api","admin","programs",":programId","approve"] } } },
+ { "name": "PUT /api/admin/programs/{programId}/reject", "request": { "method": "PUT", "header": [{"key":"Authorization","value":"Bearer {{authToken}}"},{"key":"Content-Type","value":"application/json"}], "body": { "mode":"raw","raw":"{ \"adminUserId\": \"admin-id\", \"reason\": \"not suitable\" }" }, "url": { "raw": "{{baseUrl}}/api/admin/programs/:programId/reject", "host": ["{{baseUrl}}"], "path": ["api","admin","programs",":programId","reject"] } } },
+ { "name": "DELETE /api/admin/programs/{programId}", "request": { "method": "DELETE", "header": [{"key":"Authorization","value":"Bearer {{authToken}}"}], "url": { "raw": "{{baseUrl}}/api/admin/programs/:programId", "host": ["{{baseUrl}}"], "path": ["api","admin","programs",":programId"] } } },
+
+ { "name": "GET /api/admin/exercise-library/pending", "request": { "method": "GET", "header": [{"key":"Authorization","value":"Bearer {{authToken}}"}], "url": { "raw": "{{baseUrl}}/api/admin/exercise-library/pending", "host": ["{{baseUrl}}"], "path": ["api","admin","exercise-library","pending"] } } },
+ { "name": "PUT /api/admin/exercise-library/{exerciseId}/approve", "request": { "method": "PUT", "header": [{"key":"Authorization","value":"Bearer {{authToken}}"},{"key":"Content-Type","value":"application/json"}], "body": { "mode":"raw","raw":"{ \"adminUserId\": \"admin-id\" }" }, "url": { "raw": "{{baseUrl}}/api/admin/exercise-library/:exerciseId/approve", "host": ["{{baseUrl}}"], "path": ["api","admin","exercise-library",":exerciseId","approve"] } } },
+ { "name": "PUT /api/admin/exercise-library/{exerciseId}/reject", "request": { "method": "PUT", "header": [{"key":"Authorization","value":"Bearer {{authToken}}"},{"key":"Content-Type","value":"application/json"}], "body": { "mode":"raw","raw":"{ \"adminUserId\": \"admin-id\", \"reason\": \"invalid\" }" }, "url": { "raw": "{{baseUrl}}/api/admin/exercise-library/:exerciseId/reject", "host": ["{{baseUrl}}"], "path": ["api","admin","exercise-library",":exerciseId","reject"] } } },
+ { "name": "DELETE /api/admin/exercise-library/{exerciseId}", "request": { "method": "DELETE", "header": [{"key":"Authorization","value":"Bearer {{authToken}}"}], "url": { "raw": "{{baseUrl}}/api/admin/exercise-library/:exerciseId", "host": ["{{baseUrl}}"], "path": ["api","admin","exercise-library",":exerciseId"] } } },
+
+ { "name": "GET /api/admin/trainers/pending", "request": { "method": "GET", "header": [{"key":"Authorization","value":"Bearer {{authToken}}"}], "url": { "raw": "{{baseUrl}}/api/admin/trainers/pending", "host": ["{{baseUrl}}"], "path": ["api","admin","trainers","pending"] } } },
+ { "name": "PUT /api/admin/trainers/{trainerId}/verify", "request": { "method": "PUT", "header": [{"key":"Authorization","value":"Bearer {{authToken}}"},{"key":"Content-Type","value":"application/json"}], "body": { "mode":"raw","raw":"{ \"adminUserId\": \"admin-id\" }" }, "url": { "raw": "{{baseUrl}}/api/admin/trainers/:trainerId/verify", "host": ["{{baseUrl}}"], "path": ["api","admin","trainers",":trainerId","verify"] } } },
+ { "name": "PUT /api/admin/trainers/{trainerId}/reject", "request": { "method": "PUT", "header": [{"key":"Authorization","value":"Bearer {{authToken}}"},{"key":"Content-Type","value":"application/json"}], "body": { "mode":"raw","raw":"{ \"adminUserId\": \"admin-id\", \"reason\": \"insufficient docs\" }" }, "url": { "raw": "{{baseUrl}}/api/admin/trainers/:trainerId/reject", "host": ["{{baseUrl}}"], "path": ["api","admin","trainers",":trainerId","reject"] } } },
+ { "name": "DELETE /api/admin/trainers/{trainerId}", "request": { "method": "DELETE", "header": [{"key":"Authorization","value":"Bearer {{authToken}}"}], "url": { "raw": "{{baseUrl}}/api/admin/trainers/:trainerId", "host": ["{{baseUrl}}"], "path": ["api","admin","trainers",":trainerId"] } } }
+ ]
+ },
+ {
+ "name": "UsersController",
+ "item": [
+ { "name": "GET /api/admin/users", "request": { "method": "GET", "header": [{"key":"Authorization","value":"Bearer {{authToken}}"}], "url": { "raw": "{{baseUrl}}/api/admin/users", "host": ["{{baseUrl}}"], "path": ["api","admin","users"] } } },
+ { "name": "GET /api/admin/users/{userId}", "request": { "method": "GET", "header": [{"key":"Authorization","value":"Bearer {{authToken}}"}], "url": { "raw": "{{baseUrl}}/api/admin/users/:userId", "host": ["{{baseUrl}}"], "path": ["api","admin","users",":userId"] } } },
+ { "name": "PUT /api/admin/users/{userId}/role", "request": { "method": "PUT", "header": [{"key":"Authorization","value":"Bearer {{authToken}}"},{"key":"Content-Type","value":"application/json"}], "body": { "mode":"raw","raw":"{ \"newRole\": \"Trainer\" }" }, "url": { "raw": "{{baseUrl}}/api/admin/users/:userId/role", "host": ["{{baseUrl}}"], "path": ["api","admin","users",":userId","role"] } } },
+ { "name": "DELETE /api/admin/users/{userId}", "request": { "method": "DELETE", "header": [{"key":"Authorization","value":"Bearer {{authToken}}"}], "url": { "raw": "{{baseUrl}}/api/admin/users/:userId", "host": ["{{baseUrl}}"], "path": ["api","admin","users",":userId"] } } }
+ ]
+ },
+ {
+ "name": "SubscriptionsController",
+ "item": [
+ { "name": "GET /api/admin/subscriptions", "request": { "method": "GET", "header": [{"key":"Authorization","value":"Bearer {{authToken}}"}], "url": { "raw": "{{baseUrl}}/api/admin/subscriptions", "host": ["{{baseUrl}}"], "path": ["api","admin","subscriptions"] } } },
+ { "name": "PUT /api/admin/subscriptions/{subscriptionId}/status", "request": { "method": "PUT", "header": [{"key":"Authorization","value":"Bearer {{authToken}}"},{"key":"Content-Type","value":"application/json"}], "body": { "mode":"raw","raw":"{ \"newStatus\":1, \"adminUserId\": \"admin-id\" }" }, "url": { "raw": "{{baseUrl}}/api/admin/subscriptions/:subscriptionId/status", "host": ["{{baseUrl}}"], "path": ["api","admin","subscriptions",":subscriptionId","status"] } } }
+ ]
+ }
+ ]
+ },
+ {
+ "name": "Trainer",
+ "item": [
+ {
+ "name": "ExerciseLibraryController",
+ "item": [
+ { "name": "GET /api/trainer/exerciselibrary", "request": { "method": "GET", "header": [{"key":"Authorization","value":"Bearer {{authToken}}"}], "url": { "raw": "{{baseUrl}}/api/trainer/exerciselibrary", "host": ["{{baseUrl}}"], "path": ["api","trainer","exerciselibrary"] } } },
+ { "name": "GET /api/trainer/exerciselibrary/{id}", "request": { "method": "GET", "header": [{"key":"Authorization","value":"Bearer {{authToken}}"}], "url": { "raw": "{{baseUrl}}/api/trainer/exerciselibrary/:id", "host": ["{{baseUrl}}"], "path": ["api","trainer","exerciselibrary",":id"] } } },
+ { "name": "GET /api/trainer/exerciselibrary/search", "request": { "method": "GET", "header": [{"key":"Authorization","value":"Bearer {{authToken}}"}], "url": { "raw": "{{baseUrl}}/api/trainer/exerciselibrary/search?name=push", "host": ["{{baseUrl}}"], "path": ["api","trainer","exerciselibrary","search"], "query": [{"key":"name","value":"push"}] } } },
+ { "name": "POST /api/trainer/exerciselibrary", "request": { "method": "POST", "header": [{"key":"Authorization","value":"Bearer {{authToken}}"},{"key":"Content-Type","value":"application/json"}], "body": { "mode":"raw","raw":"{ \"name\": \"Push Up\", \"category\": \"Strength\", \"muscleGroup\": \"Chest\", \"isCustom\": true }" }, "url": { "raw": "{{baseUrl}}/api/trainer/exerciselibrary", "host": ["{{baseUrl}}"], "path": ["api","trainer","exerciselibrary"] } } },
+ { "name": "PUT /api/trainer/exerciselibrary/{id}", "request": { "method": "PUT", "header": [{"key":"Authorization","value":"Bearer {{authToken}}"},{"key":"Content-Type","value":"application/json"}], "body": { "mode":"raw","raw":"{ \"name\": \"Push Up Updated\" }" }, "url": { "raw": "{{baseUrl}}/api/trainer/exerciselibrary/:id", "host": ["{{baseUrl}}"], "path": ["api","trainer","exerciselibrary",":id"] } } },
+ { "name": "DELETE /api/trainer/exerciselibrary/{id}", "request": { "method": "DELETE", "header": [{"key":"Authorization","value":"Bearer {{authToken}}"}], "url": { "raw": "{{baseUrl}}/api/trainer/exerciselibrary/:id", "host": ["{{baseUrl}}"], "path": ["api","trainer","exerciselibrary",":id"] } } }
+ ]
+ },
+ {
+ "name": "ProgramsController",
+ "item": [
+ { "name": "GET /api/trainer/programs", "request": { "method": "GET", "header": [{"key":"Authorization","value":"Bearer {{authToken}}"}], "url": { "raw": "{{baseUrl}}/api/trainer/programs", "host": ["{{baseUrl}}"], "path": ["api","trainer","programs"] } } },
+ { "name": "GET /api/trainer/programs/search", "request": { "method": "GET", "header": [{"key":"Authorization","value":"Bearer {{authToken}}"}], "url": { "raw": "{{baseUrl}}/api/trainer/programs/search?term=cardio", "host": ["{{baseUrl}}"], "path": ["api","trainer","programs","search"], "query": [{"key":"term","value":"cardio"}] } } },
+ { "name": "GET /api/trainer/programs/{id}", "request": { "method": "GET", "header": [{"key":"Authorization","value":"Bearer {{authToken}}"}], "url": { "raw": "{{baseUrl}}/api/trainer/programs/:id", "host": ["{{baseUrl}}"], "path": ["api","trainer","programs",":id"] } } },
+ { "name": "POST /api/trainer/programs", "request": { "method": "POST", "header": [{"key":"Authorization","value":"Bearer {{authToken}}"},{"key":"Content-Type","value":"application/json"}], "body": { "mode":"raw","raw":"{ \"title\": \"New Program\", \"trainerId\": \"trainer-id\", \"type\":1, \"durationWeeks\":4 }" }, "url": { "raw": "{{baseUrl}}/api/trainer/programs", "host": ["{{baseUrl}}"], "path": ["api","trainer","programs"] } } },
+ { "name": "PUT /api/trainer/programs/{id}", "request": { "method": "PUT", "header": [{"key":"Authorization","value":"Bearer {{authToken}}"},{"key":"Content-Type","value":"application/json"}], "body": { "mode":"raw","raw":"{ \"title\": \"Updated Program\" }" }, "url": { "raw": "{{baseUrl}}/api/trainer/programs/:id", "host": ["{{baseUrl}}"], "path": ["api","trainer","programs",":id"] } } },
+ { "name": "DELETE /api/trainer/programs/{id}", "request": { "method": "DELETE", "header": [{"key":"Authorization","value":"Bearer {{authToken}}"}], "url": { "raw": "{{baseUrl}}/api/trainer/programs/:id", "host": ["{{baseUrl}}"], "path": ["api","trainer","programs",":id"] } } }
+ ]
+ },
+ {
+ "name": "WeeksController",
+ "item": [
+ { "name": "GET /api/trainer/weeks/by-program/{programId}", "request": { "method": "GET", "header": [{"key":"Authorization","value":"Bearer {{authToken}}"}], "url": { "raw": "{{baseUrl}}/api/trainer/weeks/by-program/:programId", "host": ["{{baseUrl}}"], "path": ["api","trainer","weeks","by-program",":programId"] } } },
+ { "name": "GET /api/trainer/weeks/{id}", "request": { "method": "GET", "header": [{"key":"Authorization","value":"Bearer {{authToken}}"}], "url": { "raw": "{{baseUrl}}/api/trainer/weeks/:id", "host": ["{{baseUrl}}"], "path": ["api","trainer","weeks",":id"] } } },
+ { "name": "POST /api/trainer/weeks", "request": { "method": "POST", "header": [{"key":"Authorization","value":"Bearer {{authToken}}"},{"key":"Content-Type","value":"application/json"}], "body": { "mode":"raw","raw":"{ \"programId\":1, \"weekNumber\":1 }" }, "url": { "raw": "{{baseUrl}}/api/trainer/weeks", "host": ["{{baseUrl}}"], "path": ["api","trainer","weeks"] } } },
+ { "name": "PUT /api/trainer/weeks/{id}", "request": { "method": "PUT", "header": [{"key":"Authorization","value":"Bearer {{authToken}}"},{"key":"Content-Type","value":"application/json"}], "body": { "mode":"raw","raw":"{ \"weekNumber\":2 }" }, "url": { "raw": "{{baseUrl}}/api/trainer/weeks/:id", "host": ["{{baseUrl}}"], "path": ["api","trainer","weeks",":id"] } } },
+ { "name": "DELETE /api/trainer/weeks/{id}", "request": { "method": "DELETE", "header": [{"key":"Authorization","value":"Bearer {{authToken}}"}], "url": { "raw": "{{baseUrl}}/api/trainer/weeks/:id", "host": ["{{baseUrl}}"], "path": ["api","trainer","weeks",":id"] } } }
+ ]
+ },
+ {
+ "name": "DaysController",
+ "item": [
+ { "name": "GET /api/trainer/days/by-week/{weekId}", "request": { "method": "GET", "header": [{"key":"Authorization","value":"Bearer {{authToken}}"}], "url": { "raw": "{{baseUrl}}/api/trainer/days/by-week/:weekId", "host": ["{{baseUrl}}"], "path": ["api","trainer","days","by-week",":weekId"] } } },
+ { "name": "GET /api/trainer/days/{id}", "request": { "method": "GET", "header": [{"key":"Authorization","value":"Bearer {{authToken}}"}], "url": { "raw": "{{baseUrl}}/api/trainer/days/:id", "host": ["{{baseUrl}}"], "path": ["api","trainer","days",":id"] } } },
+ { "name": "POST /api/trainer/days", "request": { "method": "POST", "header": [{"key":"Authorization","value":"Bearer {{authToken}}"},{"key":"Content-Type","value":"application/json"}], "body": { "mode":"raw","raw":"{ \"programWeekId\":1, \"dayNumber\":1 }" }, "url": { "raw": "{{baseUrl}}/api/trainer/days", "host": ["{{baseUrl}}"], "path": ["api","trainer","days"] } } },
+ { "name": "PUT /api/trainer/days/{id}", "request": { "method": "PUT", "header": [{"key":"Authorization","value":"Bearer {{authToken}}"},{"key":"Content-Type","value":"application/json"}], "body": { "mode":"raw","raw":"{ \"title\": \"Leg Day\" }" }, "url": { "raw": "{{baseUrl}}/api/trainer/days/:id", "host": ["{{baseUrl}}"], "path": ["api","trainer","days",":id"] } } },
+ { "name": "DELETE /api/trainer/days/{id}", "request": { "method": "DELETE", "header": [{"key":"Authorization","value":"Bearer {{authToken}}"}], "url": { "raw": "{{baseUrl}}/api/trainer/days/:id", "host": ["{{baseUrl}}"], "path": ["api","trainer","days",":id"] } } }
+ ]
+ },
+ {
+ "name": "DayExercisesController",
+ "item": [
+ { "name": "GET /api/trainer/dayexercises/by-day/{dayId}", "request": { "method": "GET", "header": [{"key":"Authorization","value":"Bearer {{authToken}}"}], "url": { "raw": "{{baseUrl}}/api/trainer/dayexercises/by-day/:dayId", "host": ["{{baseUrl}}"], "path": ["api","trainer","dayexercises","by-day",":dayId"] } } },
+ { "name": "GET /api/trainer/dayexercises/{id}", "request": { "method": "GET", "header": [{"key":"Authorization","value":"Bearer {{authToken}}"}], "url": { "raw": "{{baseUrl}}/api/trainer/dayexercises/:id", "host": ["{{baseUrl}}"], "path": ["api","trainer","dayexercises",":id"] } } },
+ { "name": "POST /api/trainer/dayexercises", "request": { "method": "POST", "header": [{"key":"Authorization","value":"Bearer {{authToken}}"},{"key":"Content-Type","value":"application/json"}], "body": { "mode":"raw","raw":"{ \"programDayId\":1, \"exerciseId\":1, \"orderIndex\":1 }" }, "url": { "raw": "{{baseUrl}}/api/trainer/dayexercises", "host": ["{{baseUrl}}"], "path": ["api","trainer","dayexercises"] } } },
+ { "name": "PUT /api/trainer/dayexercises/{id}", "request": { "method": "PUT", "header": [{"key":"Authorization","value":"Bearer {{authToken}}"},{"key":"Content-Type","value":"application/json"}], "body": { "mode":"raw","raw":"{ \"orderIndex\":2 }" }, "url": { "raw": "{{baseUrl}}/api/trainer/dayexercises/:id", "host": ["{{baseUrl}}"], "path": ["api","trainer","dayexercises",":id"] } } },
+ { "name": "DELETE /api/trainer/dayexercises/{id}", "request": { "method": "DELETE", "header": [{"key":"Authorization","value":"Bearer {{authToken}}"}], "url": { "raw": "{{baseUrl}}/api/trainer/dayexercises/:id", "host": ["{{baseUrl}}"], "path": ["api","trainer","dayexercises",":id"] } } }
+ ]
+ },
+ {
+ "name": "ProfileController",
+ "item": [
+ { "name": "GET /api/trainer/profile/{trainerId}", "request": { "method": "GET", "header": [{"key":"Authorization","value":"Bearer {{authToken}}"}], "url": { "raw": "{{baseUrl}}/api/trainer/profile/:trainerId", "host": ["{{baseUrl}}"], "path": ["api","trainer","profile",":trainerId"] } } },
+ { "name": "PUT /api/trainer/profile/{trainerId}", "request": { "method": "PUT", "header": [{"key":"Authorization","value":"Bearer {{authToken}}"},{"key":"Content-Type","value":"application/json"}], "body": { "mode":"raw","raw":"{ \"handle\": \"newhandle\", \"bio\": \"bio text\" }" }, "url": { "raw": "{{baseUrl}}/api/trainer/profile/:trainerId", "host": ["{{baseUrl}}"], "path": ["api","trainer","profile",":trainerId"] } } }
+ ]
+ },
+ {
+ "name": "ClientsController",
+ "item": [
+ { "name": "GET /api/trainer/{trainerId}/clients", "request": { "method": "GET", "header": [{"key":"Authorization","value":"Bearer {{authToken}}"}], "url": { "raw": "{{baseUrl}}/api/trainer/:trainerId/clients", "host": ["{{baseUrl}}"], "path": ["api","trainer",":trainerId","clients"] } } }
+ ]
+ },
+ {
+ "name": "ChatController",
+ "item": [
+ { "name": "POST /api/trainer/chat/threads/start", "request": { "method": "POST", "header": [{"key":"Authorization","value":"Bearer {{authToken}}"},{"key":"Content-Type","value":"application/json"}], "body": { "mode":"raw","raw":"{ \"trainerId\": \"trainer-id\", \"clientId\": \"client-id\", \"initialMessage\": \"hello\" }" }, "url": { "raw": "{{baseUrl}}/api/trainer/chat/threads/start", "host": ["{{baseUrl}}"], "path": ["api","trainer","chat","threads","start"] } } },
+ { "name": "GET /api/trainer/chat/threads/{trainerId}", "request": { "method": "GET", "header": [{"key":"Authorization","value":"Bearer {{authToken}}"}], "url": { "raw": "{{baseUrl}}/api/trainer/chat/threads/:trainerId", "host": ["{{baseUrl}}"], "path": ["api","trainer","chat","threads",":trainerId"] } } },
+ { "name": "POST /api/trainer/chat/messages/send", "request": { "method": "POST", "header": [{"key":"Authorization","value":"Bearer {{authToken}}"},{"key":"Content-Type","value":"application/json"}], "body": { "mode":"raw","raw":"{ \"threadId\":1, \"senderId\": \"sender-id\", \"content\": \"hi\" }" }, "url": { "raw": "{{baseUrl}}/api/trainer/chat/messages/send", "host": ["{{baseUrl}}"], "path": ["api","trainer","chat","messages","send"] } } },
+ { "name": "GET /api/trainer/chat/messages/thread/{threadId}", "request": { "method": "GET", "header": [{"key":"Authorization","value":"Bearer {{authToken}}"}], "url": { "raw": "{{baseUrl}}/api/trainer/chat/messages/thread/:threadId", "host": ["{{baseUrl}}"], "path": ["api","trainer","chat","messages","thread",":threadId"] } } },
+ { "name": "DELETE /api/trainer/chat/messages/{messageId}/delete-for-me", "request": { "method": "DELETE", "header": [{"key":"Authorization","value":"Bearer {{authToken}}"}], "url": { "raw": "{{baseUrl}}/api/trainer/chat/messages/:messageId/delete-for-me?userId=USER_ID", "host": ["{{baseUrl}}"], "path": ["api","trainer","chat","messages",":messageId","delete-for-me"], "query":[{"key":"userId","value":"USER_ID"}] } } },
+ { "name": "DELETE /api/trainer/chat/messages/{messageId}/delete-for-all", "request": { "method": "DELETE", "header": [{"key":"Authorization","value":"Bearer {{authToken}}"}], "url": { "raw": "{{baseUrl}}/api/trainer/chat/messages/:messageId/delete-for-all", "host": ["{{baseUrl}}"], "path": ["api","trainer","chat","messages",":messageId","delete-for-all"] } } },
+ { "name": "POST /api/trainer/chat/threads/{threadId}/seen", "request": { "method": "POST", "header": [{"key":"Authorization","value":"Bearer {{authToken}}"},{"key":"Content-Type","value":"application/json"}], "body": { "mode":"raw","raw":"\"user-id\"" }, "url": { "raw": "{{baseUrl}}/api/trainer/chat/threads/:threadId/seen", "host": ["{{baseUrl}}"], "path": ["api","trainer","chat","threads",":threadId","seen"] } } }
+ ]
+ },
+ {
+ "name": "TrainerProfileController (legacy)",
+ "item": [
+ { "name": "GET /api/trainer/trainerprofile/GetAllProfiles", "request": { "method": "GET", "header": [{"key":"Authorization","value":"Bearer {{authToken}}"}], "url": { "raw": "{{baseUrl}}/api/trainer/trainerprofile/GetAllProfiles", "host": ["{{baseUrl}}"], "path": ["api","trainer","trainerprofile","GetAllProfiles"] } } }
+ ]
+ }
+ ]
+ },
+ {
+ "name": "Client",
+ "item": [
+ {
+ "name": "HomeClientController",
+ "item": [
+ { "name": "GET /api/client/homeclient/search", "request": { "method": "GET", "header": [{"key":"Authorization","value":"Bearer {{authToken}}"}], "url": { "raw": "{{baseUrl}}/api/client/homeclient/search?term=abc", "host": ["{{baseUrl}}"], "path": ["api","client","homeclient","search"], "query": [{"key":"term","value":"abc"}] } } },
+ { "name": "GET /api/client/homeclient/programs", "request": { "method": "GET", "header": [{"key":"Authorization","value":"Bearer {{authToken}}"}], "url": { "raw": "{{baseUrl}}/api/client/homeclient/programs", "host": ["{{baseUrl}}"], "path": ["api","client","homeclient","programs"] } } },
+ { "name": "GET /api/client/homeclient/programs/{id}", "request": { "method": "GET", "header": [{"key":"Authorization","value":"Bearer {{authToken}}"}], "url": { "raw": "{{baseUrl}}/api/client/homeclient/programs/:id", "host": ["{{baseUrl}}"], "path": ["api","client","homeclient","programs",":id"] } } },
+ { "name": "GET /api/client/homeclient/trainers", "request": { "method": "GET", "header": [{"key":"Authorization","value":"Bearer {{authToken}}"}], "url": { "raw": "{{baseUrl}}/api/client/homeclient/trainers", "host": ["{{baseUrl}}"], "path": ["api","client","homeclient","trainers"] } } },
+ { "name": "GET /api/client/homeclient/trainers/{id}", "request": { "method": "GET", "header": [{"key":"Authorization","value":"Bearer {{authToken}}"}], "url": { "raw": "{{baseUrl}}/api/client/homeclient/trainers/:id", "host": ["{{baseUrl}}"], "path": ["api","client","homeclient","trainers",":id"] } } }
+ ]
+ }
+ ]
+ },
+ {
+ "name": "Account",
+ "item": [
+ {
+ "name": "AccountController",
+ "item": [
+ { "name": "POST /api/account/register", "request": { "method": "POST", "header": [{"key":"Content-Type","value":"application/json"}], "body": { "mode":"raw","raw":"{ \"userName\": \"admin\", \"email\": \"admin@Gymunity.com\", \"fullName\": \"Admin User\", \"password\": \"Admin@123\", \"role\":1 }" }, "url": { "raw": "{{baseUrl}}/api/account/register", "host": ["{{baseUrl}}"], "path": ["api","account","register"] } } },
+ { "name": "POST /api/account/login", "request": { "method": "POST", "header": [{"key":"Content-Type","value":"application/json"}], "body": { "mode":"raw","raw":"{ \"userName\": \"admin\", \"password\": \"Admin@123\" }" }, "url": { "raw": "{{baseUrl}}/api/account/login", "host": ["{{baseUrl}}"], "path": ["api","account","login"] } } }
+ ]
+ }
+ ]
+ }
+ ]
+}
