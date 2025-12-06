@@ -37,6 +37,11 @@ namespace ITI.Gymunity.FP.Application.Mapping
                 .ForMember(dest => dest.TrainerUserName, opt => opt.MapFrom(p => p.Trainer.UserName))
                 .ForMember(dest => dest.TrainerHandle, opt => opt.MapFrom(p => p.TrainerProfile != null ? p.TrainerProfile.Handle : null));
 
+            // Mapping for client-facing Program DTO
+            CreateMap<Program, DTOs.Client.ProgramClientResponse>()
+                .ForMember(dest => dest.TrainerUserName, opt => opt.MapFrom(p => p.Trainer.UserName))
+                .ForMember(dest => dest.TrainerHandle, opt => opt.MapFrom(p => p.TrainerProfile != null ? p.TrainerProfile.Handle : null));
+
             CreateMap<ProgramWeek, ProgramWeekGetAllResponse>();
             CreateMap<ProgramDay, ProgramDayGetAllResponse>();
             CreateMap<ProgramDayExercise, ProgramDayExerciseGetAllResponse>();
@@ -72,6 +77,17 @@ namespace ITI.Gymunity.FP.Application.Mapping
             CreateMap<Exercise, ExerciseAdminGetResponse>();
             CreateMap<TrainerProfile, TrainerAdminGetResponse>()
                 .ForMember(dest => dest.UserName, opt => opt.MapFrom(tp => tp.User.UserName));
+
+            // Mapping for client-facing Trainer DTO
+            CreateMap<TrainerProfile, DTOs.Client.TrainerClientResponse>()
+                .ForMember(dest => dest.UserId, opt => opt.MapFrom(tp => tp.UserId))
+                .ForMember(dest => dest.UserName, opt => opt.MapFrom(tp => tp.User.UserName))
+                .ForMember(dest => dest.Handle, opt => opt.MapFrom(tp => tp.Handle))
+                .ForMember(dest => dest.Bio, opt => opt.MapFrom(tp => tp.Bio))
+                .ForMember(dest => dest.CoverImageUrl, opt => opt.MapFrom(tp => tp.CoverImageUrl))
+                .ForMember(dest => dest.RatingAverage, opt => opt.MapFrom(tp => tp.RatingAverage))
+                .ForMember(dest => dest.TotalClients, opt => opt.MapFrom(tp => tp.TotalClients))
+                .ForMember(dest => dest.YearsExperience, opt => opt.MapFrom(tp => tp.YearsExperience));
         }
     }
 }

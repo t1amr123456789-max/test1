@@ -55,7 +55,8 @@ namespace ITI.Gymunity.FP.Application.Services
  Type = request.Type,
  DurationWeeks = request.DurationWeeks,
  Price = request.Price,
- IsPublic = request.IsPublic,
+ // Newly created programs should be pending by default until admin approves
+ IsPublic = false,
  MaxClients = request.MaxClients,
  ThumbnailUrl = request.ThumbnailUrl
  };

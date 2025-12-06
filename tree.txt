@@ -1,0 +1,291 @@
+Volume serial number is CAAC-EEDB
+D:.
+├───.vs
+│   ├───CopilotSnapshots
+│   │   └───8ABB3A73BD95A94AAEDEF4AC204AF396
+│   │       ├───18A05A82DB11B5418B36000F827C2293
+│   │       ├───1A38298E9892BD4FB1EEFF1EA3334E5F
+│   │       ├───258D16AD78E0CE4E949D73F8A88CEC2E
+│   │       ├───266D77C17DA8A34A8BB64A2AE17B4080
+│   │       ├───363DF42EACD3A748A8DA308D2624806B
+│   │       ├───4EE335B118B3C94686BB571917FC5498
+│   │       ├───8121CCB9FD429543AC4E77FAEDE262F1
+│   │       ├───98D421DE41C35A4C81F1D5D4356B262B
+│   │       ├───9C07E28E2E502B45ABB39923C2A7FCF6
+│   │       ├───A9624BAAFB9C984D9B3150304D3ABCEA
+│   │       ├───AB5CC3510810994EAC71221BA2571A78
+│   │       ├───E87E55467ED82C4DAA743EB3A81E7780
+│   │       ├───EDF849C3518A3F488EC8E183B5EB7C1E
+│   │       └───FC7919C50E77A140A9F7AE17994C50A2
+│   ├───ITI.Gymunity.FP.Solution
+│   │   ├───config
+│   │   ├───copilot-chat
+│   │   │   └───3e7db10b
+│   │   │       └───sessions
+│   │   ├───CopilotIndices
+│   │   │   └───17.14.1368.60722
+│   │   ├───DesignTimeBuild
+│   │   ├───FileContentIndex
+│   │   └───v17
+│   ├───ProjectEvaluation
+│   └───sd
+├───ITI.Gymunity.FP.Admin.MVC
+│   ├───bin
+│   │   ├───Debug
+│   │   │   └───net9.0
+│   │   │       └───runtimes
+│   │   │           ├───unix
+│   │   │           │   └───lib
+│   │   │           │       └───net6.0
+│   │   │           ├───win
+│   │   │           │   └───lib
+│   │   │           │       ├───net6.0
+│   │   │           │       └───net7.0
+│   │   │           ├───win-arm
+│   │   │           │   └───native
+│   │   │           ├───win-arm64
+│   │   │           │   └───native
+│   │   │           ├───win-x64
+│   │   │           │   └───native
+│   │   │           └───win-x86
+│   │   │               └───native
+│   │   └───Release
+│   │       └───net9.0
+│   ├───Controllers
+│   ├───Models
+│   ├───obj
+│   │   ├───Debug
+│   │   │   └───net9.0
+│   │   │       ├───compressed
+│   │   │       ├───ref
+│   │   │       ├───refint
+│   │   │       ├───scopedcss
+│   │   │       │   ├───bundle
+│   │   │       │   ├───projectbundle
+│   │   │       │   └───Views
+│   │   │       │       └───Shared
+│   │   │       └───staticwebassets
+│   │   └───Release
+│   │       └───net9.0
+│   │           ├───ref
+│   │           └───refint
+│   ├───Properties
+│   ├───Views
+│   │   ├───Auth
+│   │   ├───Home
+│   │   └───Shared
+│   └───wwwroot
+│       ├───css
+│       ├───js
+│       └───lib
+│           ├───bootstrap
+│           │   └───dist
+│           │       ├───css
+│           │       └───js
+│           ├───jquery
+│           │   └───dist
+│           ├───jquery-validation
+│           │   └───dist
+│           └───jquery-validation-unobtrusive
+│               └───dist
+├───ITI.Gymunity.FP.APIs
+│   ├───Account
+│   ├───Areas
+│   │   ├───Admin
+│   │   ├───Client
+│   │   └───Trainer
+│   ├───bin
+│   │   ├───Debug
+│   │   │   └───net9.0
+│   │   │       ├───cs
+│   │   │       ├───de
+│   │   │       ├───Docs
+│   │   │       ├───es
+│   │   │       ├───fr
+│   │   │       ├───it
+│   │   │       ├───ja
+│   │   │       ├───ko
+│   │   │       ├───pl
+│   │   │       ├───pt-BR
+│   │   │       ├───ru
+│   │   │       ├───runtimes
+│   │   │       │   ├───unix
+│   │   │       │   │   └───lib
+│   │   │       │   │       └───net6.0
+│   │   │       │   ├───win
+│   │   │       │   │   └───lib
+│   │   │       │   │       ├───net6.0
+│   │   │       │   │       └───net7.0
+│   │   │       │   ├───win-arm
+│   │   │       │   │   └───native
+│   │   │       │   ├───win-arm64
+│   │   │       │   │   └───native
+│   │   │       │   ├───win-x64
+│   │   │       │   │   └───native
+│   │   │       │   └───win-x86
+│   │   │       │       └───native
+│   │   │       ├───tr
+│   │   │       ├───zh-Hans
+│   │   │       └───zh-Hant
+│   │   └───Release
+│   │       └───net9.0
+│   ├───Controllers
+│   ├───Docs
+│   ├───Errors
+│   │   └───Configuration
+│   ├───Middlewares
+│   ├───obj
+│   │   ├───Debug
+│   │   │   └───net9.0
+│   │   │       ├───ref
+│   │   │       ├───refint
+│   │   │       └───staticwebassets
+│   │   └───Release
+│   │       └───net9.0
+│   │           ├───ref
+│   │           └───refint
+│   └───Properties
+├───ITI.Gymunity.FP.Application
+│   ├───bin
+│   │   ├───Debug
+│   │   │   └───net9.0
+│   │   └───Release
+│   │       └───net9.0
+│   ├───Contracts
+│   │   └───ExternalServices
+│   ├───Dependancy Injection
+│   ├───DTOs
+│   │   ├───Admin
+│   │   ├───Chat
+│   │   ├───Client
+│   │   ├───Email
+│   │   ├───ExerciseLibrary
+│   │   ├───Program
+│   │   ├───Trainer
+│   │   └───User
+│   ├───Mapping
+│   ├───obj
+│   │   ├───Debug
+│   │   │   └───net9.0
+│   │   │       ├───ref
+│   │   │       └───refint
+│   │   └───Release
+│   │       └───net9.0
+│   │           ├───ref
+│   │           └───refint
+│   ├───Services
+│   └───Specefications
+├───ITI.Gymunity.FP.Domain
+│   ├───bin
+│   │   ├───Debug
+│   │   │   └───net9.0
+│   │   └───Release
+│   │       └───net9.0
+│   ├───Models
+│   │   ├───Client
+│   │   ├───Enums
+│   │   ├───Identity
+│   │   ├───Messaging
+│   │   ├───ProgramAggregate
+│   │   └───Trainer
+│   ├───obj
+│   │   ├───Debug
+│   │   │   └───net9.0
+│   │   │       ├───ref
+│   │   │       └───refint
+│   │   └───Release
+│   │       └───net9.0
+│   │           ├───ref
+│   │           └───refint
+│   ├───RepositoiesContracts
+│   └───Specification
+└───ITI.Gymunity.FP.Infrastructure
+    ├───bin
+    │   ├───Debug
+    │   │   └───net9.0
+    │   └───Release
+    │       └───net9.0
+    ├───Dependancy Injection
+    ├───ExternalServices
+    ├───obj
+    │   ├───Debug
+    │   │   └───net9.0
+    │   │       ├───ref
+    │   │       └───refint
+    │   └───Release
+    │       └───net9.0
+    │           ├───ref
+    │           └───refint
+    ├───Repositories
+    ├───Specification
+    └───_Data
+        ├───Configurations
+        └───Migrations
+
+D:\Net_ITI\A_FinalProlject\test2\ITI.Gymunity.FP.Solution>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
