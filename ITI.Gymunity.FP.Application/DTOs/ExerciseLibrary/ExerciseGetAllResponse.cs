@@ -13,6 +13,6 @@ namespace ITI.Gymunity.FP.Application.DTOs.ExerciseLibrary
  public string? ThumbnailUrl { get; set; }
  public bool IsCustom { get; set; }
  public string? TrainerId { get; set; }
- public DateTime CreatedAt { get; set; }
+ public DateTimeOffset CreatedAt { get; set; }
  }
 }
