@@ -29,5 +29,51 @@ namespace ITI.Gymunity.FP.Application.Services
 
         }
 
+        public async Task<TrainerProfileGetResponse> CreateProfileIfNotExistsAsync(TrainerProfileCreateRequest request)
+        {
+            // Check unique Handle
+            var existingHandle = (await _unitOfWork.Repository<TrainerProfile>().GetAllAsync()).Any(tp => tp.Handle == request.Handle);
+            if (existingHandle)
+                throw new InvalidOperationException("Handle already exists.");
+
+            // Check user profile exists
+            var existing = (await _unitOfWork.Repository<TrainerProfile>().GetAllAsync()).FirstOrDefault(tp => tp.UserId == request.UserId);
+            if (existing != null)
+                return _mapper.Map<TrainerProfileGetResponse>(existing);
+
+            var entity = new TrainerProfile
+            {
+                UserId = request.UserId,
+                Handle = request.Handle,
+                Bio = request.Bio,
+                CoverImageUrl = request.CoverImageUrl,
+                VideoIntroUrl = request.VideoIntroUrl,
+                BrandingColors = request.BrandingColors,
+                YearsExperience = request.YearsExperience
+            };
+
+            _unitOfWork.Repository<TrainerProfile>().Add(entity);
+            try
+            {
+                await _unitOfWork.CompleteAsync();
+            }
+            catch (Exception ex)
+            {
+                // log if you have logger
+                throw;
+            }
+
+            return _mapper.Map<TrainerProfileGetResponse>(entity);
+        }
+
+        public async Task<bool> DeleteProfileAsync(int id)
+        {
+            var repo = _unitOfWork.Repository<TrainerProfile>();
+            var entity = await repo.GetByIdAsync(id);
+            if (entity == null) return false;
+            repo.Delete(entity);
+            await _unitOfWork.CompleteAsync();
+            return true;
+        }
     }
 }
